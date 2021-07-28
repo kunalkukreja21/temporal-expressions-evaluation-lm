@@ -1,0 +1,72 @@
+Forward Past Template,Backward Past Template,Occurrence Past,Forward Future Template,Backward Future Template,Occurrence Future,Duration,Spread I,Spread II,Duration Template
+They got married,they got married,"day, month, year",They will get married,they will get married,"day, month, year",point,,,
+We went to Disneyland,we went to Disneyland,"day, month, year",We will go to Disneyland,we will go to Disneyland,"day, month, year","day_time, day",We reached Disneyland,and left,We visited Disneyland
+Michael bought the house,Michael bought the house,"day, month, year",Michael will buy the house,Michael will buy the house,"day, month, year",point,,,
+Lily flew to New York,Lily flew to New York,"day_time, day, month, year",Lily will fly to New York,Lily will fly to New York,"minutes, day_time, day, month, year",day_time,Lily departed for New York,and arrived,Lily flew to New York
+The music concert started,the music concert started,"day_time, day, month",The music concert will start in,the music concert will start in,"minutes, day_time, day, month",day_time,The music concert started,and ended,The music concert lasted
+The tiger was last spotted,the tiger was last spotted,"day_time, day, month, year",The tiger will be spotted,the tiger will be spotted,"day_time, day, month",point,,,
+I had dinner with my friends,I had dinner with my friends,"day_time, day",I will have dinner with my friends,I will have dinner with my friends,"minutes, day_time, day",day_time,The dinner with my friends began,and got over,I had dinner with my friends
+He left his job,he left his job,"day_time, day, month, year",He will leave his job,he will leave his job,"day_time, day, month",point,,,
+The conference was held,the conference was held,"day_time, day, month, year",The conference will be held,the conference will be held,"day_time, day, month, year",day,The conference began,and ended,The conference lasted
+The city had a huge power outage,the city had a huge power outage,"day_time, day, month, year",The city will have a huge power outage,the city will have a huge power outage,"day_time, day","day_time, day",A huge power outage in the city started,and ended,The city had a huge power outage
+A tsunami hit the coast,a tsunami hit the coast,"day_time, day, month, year",A tsunami will hit the coast,a tsunami will hit the coast,"day_time, day, month",point,,,
+This team won the world cup,this team won the world cup,"day, month, year",This team will win the world cup,this team will win the world cup,"day, month, year",point,,,
+Her internship at Google began,her internship at Google began,"day_time, day, month",Her internship at Google will begin,her internship at Google will begin,"day_time, day, month, year","day, month",Her internship at Google will start,and end,Her internship at Google will last
+The country declared martial law,the country declared martial law,"day_time, day, month, year",The country will declare martial law,the country will declare martial law,"day_time, day, month",point,,,
+The price of this stock peaked,the price of this stock peaked,"day_time, day, month, year",The price of this stock will peak,the price of this stock will peak,"day_time, day, month, year",point,,,
+The failing company issued major layoffs,the failing company issued major layoffs,"day_time, day, month, year",The failing company will issue major layoffs,the failing company will issue major layoffs,"day_time, day, month",day,The failing company started issuing major layoffs,which ended,The failing company issued major layoffs
+The government budget came out,the government budget came out,"day_time, day, month, year",The government budget will come out,the government budget will come out,"day_time, day, month, year",point,,,
+The prison sentence of that convict ended,the prison sentence of that convict ended,"day_time, day, month, year",The prison sentence of that convict will end,the prison sentence of that convict will end,"day_time, day, month, year","month, year",The prison sentence of that convict started,and ended,The prison sentence of that convict lasted
+This article was published,this article was published,"day_time, day, month, year",This article will be published,this article will be published,"minutes, day_time, day",point,,,
+I posted this picture on Instagram,I posted this picture on Instagram,"day_time, day, month, year",I will post this picture on Instagram,I will post this picture on Instagram,"minutes, day_time, day",point,,,
+I graduated,I graduated,"day, month, year",I will graduate,I will graduate,"day, month, year",point,,,
+Robin visited her parents,Robin visited her parents,"day_time, day, month",Robin will visit her parents,Robin will visit her parents,"day_time, day, month",day,Robin's visit to her parents' started,and ended,Robin visited her parents
+I submitted my PhD dissertation,I submitted my PhD dissertation,"day_time, day, month, year",I will submit my PhD dissertation,I will submit my PhD dissertation,"day_time, day, month, year",point,,,
+He was sworn in as the Prime Minister,he was sworn in as the Prime Minister,"day_time, day, month, year",He will be sworn in as the Prime Minister,he will be sworn in as the Prime Minister,"minutes, day_time, day, month",point,,,
+The startup received funding,the startup received funding,"day_time, day, month, year",The startup will receive funding,the startup will receive funding,"day_time, day, month, year",point,,,
+The government issued new labor policies,the government issued new labor policies,"day_time, day, month, year",The government will issue new labor policies,the government will issue new labor policies,"day_time, day, month, year",point,,,
+Michael reached my house,Michael reached my house,"day_time, day",Michael will reach my house,Michael will reach my house,"minutes, day_time, day",day_time,Michael reached my house,and left,Michael visited my house
+The football game began,the football game began,day_time,The football game will begin,the football game will begin,"minutes, day_time",day_time,The football game will begin,and last until,The football game will be telecasted
+My English class began,my English class begins,"day_time, day, month",My English class will begin,my English class will begin,"minutes, day_time, day, month",day_time,My English class begins,and ends,My English class is scheduled
+The coding competition started,the coding competition started,"day_time, day",The coding competition will start,the coding competition will start,"minutes, day_time, day","day_time, day",The coding competition started,and ended,The coding competition was held
+The meeting began,the meeting began,day_time,The meeting will begin,the meeting will begin,"minutes, day_time",day_time,The meeting began,and got over,The meeting lasted
+I started my office leave,I started my office leave,"day_time, day, month",I will start my office leave,I will start my office leave,"day_time, day, month",day,I will start my office leave,and be back,I will be on my office leave
+I left on a long vacation,I left on a long vacation,"day, month",I will leave on a long vacation,I will leave on a long vacation,"day, month",month,I will be leaving on a long vacation,and be back,I will be going on a long vacation
+The pleasant weather here started,the pleasant weather here started,"day, month",The pleasant weather here will start,the pleasant weather here will start,month,month,The pleasant weather here starts,and ends,The weather here is pleasant
+The spring quarter began,the spring quarter began,"day, month",The spring quarter will begin,the spring quarter will begin,"day, month",month,The spring quarter begins,and ends,The spring quarter lasts
+I started working on my MS application,I started working on my MS application,"day_time, day, month",I will start working on my MS application,I will start working on my MS application,"day_time, day, month","day, month",I started working on my MS application,and got done,I worked on my MS application
+The war began,the war began,"day, month, year",The war will begin,the war will begin,"day, month",year,The war began,and lasted until,The war lasted
+My grandfather was born,my grandfather was born,"day_time, day, month, year",,,,year,My grandfather was born,and died,My grandfather lived
+The country became a dictatorship,the country became a dictatorship,"day, month, year",The country will become a dictatorship,the country will become a dictatorship,"day, month",year,The country became a dictatorship,which ended,The country was under a dictatorship
+The pandemic began,the pandemic began,"month, year",,,,year,The pandemic began,and lasted until,The pandemic lasted
+The train from Seattle departed,the train from Seattle depart,day_time,The train from Seattle will depart,the train from Seattle will depart,"minutes, day_time",day_time,The train from Seattle started,and reached Portland,The train journey from Seattle to Portland lasted
+The storm began,the storm began,"day_time, day",The storm will begin,the storm will begin,"day_time, day","day_time, day",The storm began,and lasted until,The storm lasted
+The match between India and Australia began,the match between India and Australia began,"day_time, day",The match between India and Australia will begin,the match between India and Australia will begin,"minutes, day_time, day",day,The match between India and Australia began,and ended,India played Australia
+Their tour of Europe started,their tour of Europe started,"day, month",Their tour of Europe will start,their tour of Europe will start,"day, month","day, month",Their tour of Europe started,and lasted until,They toured parts of Europe
+They became the top football team,they became the top football team,"day, month, year",They will become the top football team,they will become the top football team,"day, month, year","month, year",They became the top football team,and remained so until,They were the top football team
+I started my bachelors,I started my bachelors,"day, month, year",I will start my bachelors,I will start my bachelors,"day, month, year",year,I started my bachelors,and graduated,I pursued my bachelors degree
+Luke ate dinner,Luke ate dinner,day_time,Luke will eat dinner,Luke will eat dinner,"minutes, day_time",point,,,
+Mary's party started,Mary's party started,day_time,Mary's party will start,Mary's party will start,day_time,day_time,Mary's party started,and went until,Mary's party lasted
+The servers backed up,the servers backed up,"day_time, day",The servers will back up,the servers will back up,"minutes, day_time, day",day_time,The servers' back up will start,and end,The servers will back up
+Dinner was ready,dinner was ready,day_time,Dinner will be ready,dinner will be ready,"minutes, day_time",point,,,
+,,,The coffee will be ready to drink,the coffee will be ready to drink,minutes,point,,,
+Our favorite breakfast restaurant opened,our favorite breakfast restaurant opened,"day_time, day, month, year",Our favorite breakfast restaurant will open,our favorite breakfast restaurant will open,"minutes, day_time, day",day_time,Our favorite breakfast restaurant opens,and closes,Our favorite breakfast restaurant opens
+The President gave a speech,the President gave a speech,"day_time, day",The President will give a speech,the President will give a speech,"minutes, day_time, day",day_time,The President's speech started,and ended,The President gave a speech
+The grocery store closed,the grocery store closed,"day_time, day",The grocery store will close,the grocery store will close,"minutes, day_time, day",point,,,
+,,,The webpage should finish loading,the webpage should finish loading,minutes,point,,,
+,,,Commercial break will be over,commercial break will be over,minutes,point,,,
+,,,The oven will be ready,the oven will be ready,minutes,point,,,
+The park was open,the park was open,"day_time, day, month, year",The park will open,the park will open,"minutes, day_time, day, month","day_time, day, month",The park opens,and closes,The park is open
+Basketball season ended,basketball season ended,"day, month",Basketball season will end,basketball season will end,"day, month",month,Basketball season starts,and ends,Basketball season lasts
+We started attending outdoor concerts,we started attending outdoor concerts,"month, year",We will start attending outdoor concerts,we will start attending outdoor concerts,month,"month, year",We started attending outdoor concerts,and stopped,We attended outdoor concerts
+Final grades were due,final grades were due,"day_time, day",Final grades are due,final grades are due,"day_time, day",point,,,
+Pixar released an animated film,Pixar released an animated film,"day, month, year",Pixar will release an animated film,Pixar will release an animated film,"day, month, year",point,,,
+Kendrick's album dropped,Kendrick's album dropped,"day, month, year",Kendrick's album is set to drop,Kendrick's album is set to drop,"day, month, year",point,,,
+The Presidential election took place,the Presidential election took place,"day, month, year",The Presidential election is set to take place,the Presidential election is set to take place,"day, month, year",point,,,
+The landlord collected rent,the landlord collected rent,"day_time, day",The landlord will collect rent,the landlord will collect rent,"day_time, day",point,,,
+We rode our bikes,we rode our bikes,"day_time, day",We will ride our bikes,we will ride our bikes,"minutes, day_time, day",day_time,We started riding our bikes,and rode until,We rode our bikes
+Apple released the new iPhone,Apple released the new iPhone,"day, month",Apple will release the new iPhone,Apple will release the new iPhone,"day, month",point,,,
+The court case began,the court case began,"day_time, day, month",The court case will begin,the court case will begin,"minutes, day_time, day, month","day, month",The court case started,and ended,The court case lasted
+Jake moved,Jake moved,"day, month",Jake is planning to move,Jake is planning to move,"day, month",point,,,
+Lindsey paid off her loans,Lindsey paid off her loans,"month, year",Lindsey will pay off her loans,Lindsey will pay off her loans,"month, year",point,,,
+My doctor's appointment was scheduled to take place,my doctor's appointment was scheduled to take place,"day_time, day",My doctor's appointment is scheduled to take place,my doctor's appointment is scheduled to take place,"minutes, day_time, day",day_time,My doctor's appointment started at,and went until,My doctor's appointment took place
