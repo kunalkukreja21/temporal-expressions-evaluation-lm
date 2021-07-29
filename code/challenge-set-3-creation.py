@@ -114,11 +114,15 @@ def generate_samples_for_template(template_df_row, dataset_list):
 
 def generate_samples_for_templates(templates_file, dataset_file_path):
     templates_df = pd.read_csv(templates_file)
-    templates_df = templates_df[~pd.isna(templates_df['Forward Future Template'])]
 
-    msk = np.random.rand(len(templates_df)) < 0.8
-    train_templates_df = templates_df[msk]
-    test_templates_df = templates_df[~msk]
+    dev_inds = [20, 21, 22, 23, 24, 25, 40, 41, 42, 43, 44, 45, 50, 53, 55, 61, 67, 69]
+    train_templates_df = templates_df.iloc[[idx for idx in templates_df.index if idx not in dev_inds]]
+    test_templates_df = templates_df.iloc[dev_inds]
+    train_templates_df.reset_index(inplace=True, drop=True)
+    test_templates_df.reset_index(inplace=True, drop=True)
+
+    train_templates_df = train_templates_df[~pd.isna(train_templates_df['Forward Future Template'])]
+    test_templates_df = test_templates_df[~pd.isna(test_templates_df['Forward Future Template'])]
 
     train_dataset_list = []
     test_dataset_list = []
