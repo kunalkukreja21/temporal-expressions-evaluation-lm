@@ -53,10 +53,6 @@ def get_label(premise_preposition, lut, hypo_preposition):
     raise ValueError('Unexpected value: ', premise_preposition)
 
 
-def main():
-    templates_df = pd.read_csv('../data/templates.csv')
-
-
 def get_occurrence_time_name(occurrence_time_key, occurrence_time_value):
     return ('hour' if occurrence_time_key == 'day_time' else occurrence_time_key) + \
            ('s' if occurrence_time_value > 1 else '')
@@ -77,33 +73,43 @@ def generate_samples_for_template(template_df_row, dataset_list):
             higher_unit_time = base_time + LOWER_RANGE
             lower_unit_time = round(higher_unit_time * factor)
 
-            for premise_forward_backward in ['forward', 'backward']:
-                for premise_preposition in ['in', 'before', 'after']:
-                    for lut in ['lower', 'higher']:
-                        for hypo_preposition in ['before', 'after']:
-                            # higher_unit_time_lower = random.randint(1, higher_unit_time - 1)
-                            lower_unit_time_lower = random.randint(
-                                max(round(max(0, higher_unit_time - DIFF_RANGE) * factor), 1), lower_unit_time - 1)
+            for premise_direction in ['forward', 'backward']:
+                for hypothesis_direction in ['forward', 'backward']:
+                    for premise_preposition in ['in', 'before', 'after']:
+                        for lut in ['lower', 'higher']:
+                            for hypo_preposition in ['before', 'after']:
+                                # higher_unit_time_lower = random.randint(1, higher_unit_time - 1)
+                                lower_unit_time_lower = random.randint(
+                                    max(round(max(0, higher_unit_time - DIFF_RANGE) * factor), 1), lower_unit_time - 1)
 
-                            # higher_unit_time_higher = random.randint(higher_unit_time + 1, UPPER_RANGE)
-                            lower_unit_time_higher = random.randint(lower_unit_time + 1,
-                                                                    round((higher_unit_time + DIFF_RANGE) * factor))
+                                # higher_unit_time_higher = random.randint(higher_unit_time + 1, UPPER_RANGE)
+                                lower_unit_time_higher = random.randint(lower_unit_time + 1,
+                                                                        round((higher_unit_time + DIFF_RANGE) * factor))
+                                lower_unit_time_cur = lower_unit_time_lower if lut == 'lower' else lower_unit_time_higher
 
-                            if premise_forward_backward == 'forward':
-                                premise = ' '.join([forward_template, premise_preposition, str(higher_unit_time),
-                                                    get_occurrence_time_name(occurrence_times[i + 1],
-                                                                             higher_unit_time) + '.'])
-                            elif premise_forward_backward == 'backward':
-                                premise = ' '.join([premise_preposition.capitalize(), str(higher_unit_time),
-                                                    get_occurrence_time_name(occurrence_times[i + 1],
-                                                                             higher_unit_time) + ',',
-                                                    backward_template + '.'])
-                            lower_unit_time_cur = lower_unit_time_lower if lut == 'lower' else lower_unit_time_higher
-                            hypo = ' '.join([forward_template, hypo_preposition, str(lower_unit_time_cur),
-                                             get_occurrence_time_name(occurrence_times[i], lower_unit_time_cur) + '.'])
-                            label = get_label(premise_preposition, lut, hypo_preposition)
-                            dataset_list.append([premise, hypo, label, premise_preposition, occurrence_times[i + 1],
-                                                 premise_forward_backward])
+                                forward_premise = ' '.join(
+                                    [forward_template, premise_preposition, str(higher_unit_time),
+                                     get_occurrence_time_name(occurrence_times[i + 1],
+                                                              higher_unit_time) + '.'])
+                                backward_premise = ' '.join([premise_preposition.capitalize(), str(higher_unit_time),
+                                                             get_occurrence_time_name(occurrence_times[i + 1],
+                                                                                      higher_unit_time) + ',',
+                                                             backward_template + '.'])
+                                forward_hypothesis = ' '.join(
+                                    [forward_template, hypo_preposition, str(lower_unit_time_cur),
+                                     get_occurrence_time_name(occurrence_times[i],
+                                                              lower_unit_time_cur) + '.'])
+                                backward_hypothesis = ' '.join([hypo_preposition.capitalize(), str(lower_unit_time_cur),
+                                                                get_occurrence_time_name(occurrence_times[i],
+                                                                                         lower_unit_time_cur) + ',',
+                                                                backward_template + '.'])
+
+                                label = get_label(premise_preposition, lut, hypo_preposition)
+                                dataset_list.append(
+                                    [forward_premise if premise_direction == 'forward' else backward_premise,
+                                     forward_hypothesis if hypothesis_direction == 'forward' else backward_hypothesis,
+                                     label, premise_preposition, occurrence_times[i + 1], premise_direction,
+                                     hypothesis_direction])
 
 
 def generate_samples_for_templates(templates_file, dataset_file_path):
@@ -121,28 +127,30 @@ def generate_samples_for_templates(templates_file, dataset_file_path):
     test_templates_df.apply(generate_samples_for_template, args=(test_dataset_list,), axis=1)
 
     train_dataset_df = pd.DataFrame(train_dataset_list,
-                              columns=['Premise', 'Hypothesis', 'Label', 'Premise Preposition', 'Higher Duration Unit',
-                                       'Premise Forward/Backward'])
+                                    columns=['Premise', 'Hypothesis', 'Label', 'Premise Preposition',
+                                             'Higher Duration Unit',
+                                             'Premise Direction', 'Hypothesis Direction'])
     train_dataset_df.to_csv(dataset_file_path + '/cs3-train.csv')
 
     test_dataset_df = pd.DataFrame(test_dataset_list,
-                                    columns=['Premise', 'Hypothesis', 'Label', 'Premise Preposition',
-                                             'Higher Duration Unit',
-                                             'Premise Forward/Backward'])
+                                   columns=['Premise', 'Hypothesis', 'Label', 'Premise Preposition',
+                                            'Higher Duration Unit',
+                                            'Premise Direction', 'Hypothesis Direction'])
     test_dataset_df.to_csv(dataset_file_path + '/cs3-test.csv')
-
 
     print('Train dataset stats')
     print(train_dataset_df['Label'].value_counts())
     print(train_dataset_df['Premise Preposition'].value_counts())
     print(train_dataset_df['Higher Duration Unit'].value_counts())
-    print(train_dataset_df['Premise Forward/Backward'].value_counts())
+    print(train_dataset_df['Premise Direction'].value_counts())
+    print(train_dataset_df['Hypothesis Direction'].value_counts())
 
     print('Test dataset stats')
     print(test_dataset_df['Label'].value_counts())
     print(test_dataset_df['Premise Preposition'].value_counts())
     print(test_dataset_df['Higher Duration Unit'].value_counts())
-    print(test_dataset_df['Premise Forward/Backward'].value_counts())
+    print(train_dataset_df['Premise Direction'].value_counts())
+    print(train_dataset_df['Hypothesis Direction'].value_counts())
 
 
 if __name__ == "__main__":
