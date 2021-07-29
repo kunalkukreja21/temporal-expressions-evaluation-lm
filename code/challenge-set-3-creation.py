@@ -87,6 +87,8 @@ def generate_samples_for_template(template_df_row, dataset_list):
                                                                         round((higher_unit_time + DIFF_RANGE) * factor))
                                 lower_unit_time_cur = lower_unit_time_lower if lut == 'lower' else lower_unit_time_higher
 
+                                lower_higher_diff = (lower_unit_time_cur - (higher_unit_time * factor))/factor
+
                                 forward_premise = ' '.join(
                                     [forward_template, premise_preposition, str(higher_unit_time),
                                      get_occurrence_time_name(occurrence_times[i + 1],
@@ -109,7 +111,7 @@ def generate_samples_for_template(template_df_row, dataset_list):
                                     [forward_premise if premise_direction == 'forward' else backward_premise,
                                      forward_hypothesis if hypothesis_direction == 'forward' else backward_hypothesis,
                                      label, premise_preposition, occurrence_times[i + 1], premise_direction,
-                                     hypothesis_direction])
+                                     hypothesis_direction, lower_higher_diff])
 
 
 def generate_samples_for_templates(templates_file, dataset_file_path):
@@ -133,13 +135,13 @@ def generate_samples_for_templates(templates_file, dataset_file_path):
     train_dataset_df = pd.DataFrame(train_dataset_list,
                                     columns=['Premise', 'Hypothesis', 'Label', 'Premise Preposition',
                                              'Higher Duration Unit',
-                                             'Premise Direction', 'Hypothesis Direction'])
+                                             'Premise Direction', 'Hypothesis Direction', 'Lower/Higher Diff'])
     train_dataset_df.to_csv(dataset_file_path + '/cs3-train.csv')
 
     test_dataset_df = pd.DataFrame(test_dataset_list,
                                    columns=['Premise', 'Hypothesis', 'Label', 'Premise Preposition',
                                             'Higher Duration Unit',
-                                            'Premise Direction', 'Hypothesis Direction'])
+                                            'Premise Direction', 'Hypothesis Direction', 'Lower/Higher Diff'])
     test_dataset_df.to_csv(dataset_file_path + '/cs3-test.csv')
 
     print('Train dataset stats')
