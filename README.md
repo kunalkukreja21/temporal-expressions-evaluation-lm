@@ -9,4 +9,5 @@ To run the code and create Challenge Set 1 afresh:
 cd code
 python cs1.py
 ```
+The same procedure needs to be followed for the other challenge sets.
 Note that though this might create a dataset with the same format, the instances might be different from what were used for training and testing purposes in our experiments.
